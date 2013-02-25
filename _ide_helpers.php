@@ -356,12 +356,12 @@ class Input extends Illuminate\Http\Request {}
 class Request extends Illuminate\Http\Request {}
 
 /**
- * @var	static	void	original	The original content of the response.
- * @method	static	void	withCookie(Symfony\Component\HttpFoundation\Cookie  $cookie)	Add a cookie to the response.
- * @method	static	void	setContent(mixed  $content)	Set the content on the response.
- * @method	static	mixed	getOriginalContent()	Get the original response content.
+ * @method	static	\Illuminate\Http\Response	make(string $content = '', int $status = 200, array $headers = array())	Return a new response from the application.
+ * @method	static	\Symfony\Component\HttpFoundation\JsonResponse	json($data = array(), int $status = 200, array $headers = array())	Return a new JSON response from the application.
+ * @method	static	\Symfony\Component\HttpFoundation\StreamedResponse	stream(Closure $callback, int $status = 200, array $headers = array())	Return a new streamed response from the application.
+ * @method	static	\Symfony\Component\HttpFoundation\BinaryFileResponse	download($file, int $status = 200, array $headers = array())	Create a new file download response.
  */
-class Response extends Illuminate\Http\Response {}
+class Response extends Illuminate\Support\Facades\Response {}
 
 /**
  * @method	static	void	useFiles(string  $path, string  $level = 'debug')	Register a file log handler.
